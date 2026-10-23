@@ -1,0 +1,20 @@
+<div class="container text-center mt-4">
+  <h2>Mes films préférés</h2>
+
+  <ul class="list-unstyled">
+    @for (film of films; track film.titre) {
+      <li>
+        <a href="#" (click)="choisir(film); $event.preventDefault()">
+          {{ film.titre }}
+        </a>
+      </li>
+    }
+  </ul>
+
+  @if (filmSelectionne(); as f) {
+    <div class="mt-4">
+      <h3>{{ f.titre }}</h3>
+      <img [src]="'/affiche/' + f.affiche" [alt]="f.titre" class="img-fluid affiche" />
+    </div>
+  }
+</div>

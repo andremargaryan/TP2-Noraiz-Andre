@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from './header/header';
 import { Footer } from './footer/footer';
 import { Gif } from './gif/gif';
+import { Header } from './header/header';
 
 @Component({
-  imports: [RouterOutlet, Header, Footer, Gif],
+  imports: [RouterOutlet, Header, Footer, Gif,],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
