@@ -1,0 +1,44 @@
+<div class="container mt-4" style="max-width: 500px;">
+  <h2 class="text-center">Contact</h2>
+
+  <form [formGroup]="form" (ngSubmit)="envoyer()">
+    <div class="mb-3">
+      <label class="form-label">Prénom</label>
+      <input class="form-control" formControlName="prenom" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Nom</label>
+      <input class="form-control" formControlName="nom" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Âge</label>
+      <input type="number" class="form-control" formControlName="age" />
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="hide" formControlName="hide" />
+      <label class="form-check-label" for="hide">Hide</label>
+    </div>
+
+    @if (!form.controls.hide.value) {
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" formControlName="email" />
+        @if (form.controls.email.touched && form.controls.email.invalid) {
+          <small class="text-danger">Email requis, avec un @.</small>
+        }
+      </div>
+    }
+
+    <div class="mb-3">
+      <label class="form-label">Commentaire</label>
+      <textarea class="form-control" rows="4" formControlName="commentaire"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100" [disabled]="form.invalid">
+      Envoyer
+    </button>
+  </form>
+</div>
