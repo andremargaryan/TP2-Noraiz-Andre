@@ -10,8 +10,6 @@ export const routes: Routes = [
   { path: 'liste', component: Liste },
   { path: 'contact', component: Contact },
   { path: 'gestion', component: Gestion },
-{ path: 'contact', component: Contact },
-  // ajoute ici contact et gestion plus tard
   { path: '**', redirectTo: 'accueil' },
 
 ];

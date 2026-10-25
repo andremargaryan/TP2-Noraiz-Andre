@@ -1,1 +1,17 @@
-<p>gestion works!</p>
+<div class="container text-center mt-4">
+  <h2>Gestion</h2>
+
+  @if (data.dernier) {
+    <div class="card mx-auto mt-3" style="max-width: 500px;">
+      <div class="card-body">
+        <p><strong>Prénom :</strong> {{ data.dernier.prenom }}</p>
+        <p><strong>Nom :</strong> {{ data.dernier.nom }}</p>
+        <p><strong>Âge :</strong> {{ data.dernier.age ?? 'Non renseigné' }}</p>
+        <p><strong>Email :</strong> {{ data.dernier.email || 'Non renseigné' }}</p>
+        <p><strong>Commentaire :</strong> {{ data.dernier.commentaire }}</p>
+      </div>
+    </div>
+  } @else {
+    <app-not-found />
+  }
+</div>
